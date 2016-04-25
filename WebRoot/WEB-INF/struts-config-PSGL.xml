@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="g_CarForm" type="com.yuntong.action.actionform.G_CarForm"/>
+    <form-bean name="g_DriverInfoForm" type="com.yuntong.action.actionform.G_DriverInfoForm" />
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+      
+      
+      
+    <action path="/g_GoPSGL" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward
+        name="psgl"
+        path="/G_addCar.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="g_CarForm"
+      name="g_CarForm"
+      path="/g_AddTruckInfo"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy" />
+    <action path="/g_GoDriverInfo" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward
+        name="addDriver"
+        path="/G_addDriver.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="g_DriverInfoForm"
+      name="g_DriverInfoForm"
+      path="/g_AddDriverInfo"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy" />
+    <action path="/g_GoSJYS" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward
+        name="sjys"
+        path="/G_sjys1.jsp"
+        redirect="true" />
+    </action>
+    <action path="/g_FindCityByProvince" type="org.springframework.web.struts.DelegatingActionProxy" />
+    <action path="/g_TruckParticularInfo" type="org.springframework.web.struts.DelegatingActionProxy" />
+    <action path="/g_GoSJYS2" type="com.yuntong.action.G_GoSJYS2Action">
+      <forward
+        name="sjys2"
+        path="/G_sjys2.jsp"
+        redirect="true" />
+    </action>
+    <action path="/g_FindRegisterInfo" type="org.springframework.web.struts.DelegatingActionProxy" />
+    
+    <action path="/g_FindTruckInfo" type="org.springframework.web.struts.DelegatingActionProxy" />
+    <action path="/g_FindDriverInfo" type="org.springframework.web.struts.DelegatingActionProxy" />
+    <action path="/g_FindAllTruck" type="org.springframework.web.struts.DelegatingActionProxy" />
+    <action path="/g_GoSNPS" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward
+        name="scps"
+        path="/G_scps1.jsp"
+        redirect="true" />
+    </action>
+    <action path="/g_GoSNPS2" type="com.yuntong.action.G_GoSNPS2Action">
+      <forward
+        name="scps2"
+        path="/G_scps2.jsp"
+        redirect="true" />
+    </action>
+    <action path="/g_FindAllDriverInfo" type="org.springframework.web.struts.DelegatingActionProxy" />
+    <action path="/g_GoSJYS3" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="sjys3" path="/G_sjys3.jsp" />
+    </action>
+    <action path="/g_GoSNPS3" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="scps3" path="/G_scps3.jsp" />
+    </action>
+    <action path="/g_UpLoadPicture" type="com.yuntong.action.ajaxaction.G_UpLoadPictureAction"/>
+    <action path="/g_RegisterAutoComplete" type="org.springframework.web.struts.DelegatingActionProxy" />
+    <action path="/g_googleTruck" type="org.springframework.web.struts.DelegatingActionProxy" />
+
+      
+    
+    
+  </action-mappings>
+
+ <controller processorClass="com.yuntong.requestProcessor.MyRequestProcessor"></controller>
+ <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+  	<set-property property="contextConfigLocation" value="/WEB-INF/classes/spring.xml"/>
+  </plug-in>
+</struts-config>

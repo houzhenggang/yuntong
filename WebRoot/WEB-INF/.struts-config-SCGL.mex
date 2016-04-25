@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/m_scgl_1.do" location="612,188" dimension="308,88" />
+  <StrutsActivity path="/m_delteInfo.do" location="0,0" dimension="308,88" />
+  <StrutsActivity path="/m_select.do" location="408,0" dimension="308,88" />
+  <StrutsActivity path="/addInfo.do" location="816,0" dimension="308,88" />
+  <StrutsActivity path="/updateInfo.do" location="1224,0" dimension="308,88" />
+  <StrutsActivity path="/findById.do" location="0,470" dimension="308,88" />
+  <StrutsActivity path="/m_updataAjaxAction.do" location="353,470" dimension="308,88" />
+  <StrutsActivity path="/m_typing.do" location="165,240" dimension="151,100" />
+  <StrutsActivity path="/M_scgl_1.jsp" location="718,376" dimension="95,49" />
+  <StrutsActivity path="/M_scgll_2.jsp" location="7,658" dimension="97,49" />
+  <StrutsActivity path="/M_scgl_2.jsp" location="204,658" dimension="95,49" />
+  <StrutsActivity path="/m_googleTHDJ.do" location="950,350" dimension="268,84" />
+  <StrutsTransition id="/m_delteInfo.do,delete,/m_scgl_1.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="154,88" />
+      <AbsolutePoint location="154,153" />
+      <AbsolutePoint location="650,153" />
+      <AbsolutePoint location="650,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/m_scgl_1.do,ok,/M_scgl_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="766,276" />
+      <AbsolutePoint location="766,376" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findById.do,findok,/M_scgl_2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="231,558" />
+      <AbsolutePoint location="231,608" />
+      <AbsolutePoint location="252,608" />
+      <AbsolutePoint location="252,658" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addInfo.do,addok,/m_scgl_1.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="970,88" />
+      <AbsolutePoint location="970,123" />
+      <AbsolutePoint location="804,123" />
+      <AbsolutePoint location="804,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findById.do,error,/M_scgll_2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="77,558" />
+      <AbsolutePoint location="77,608" />
+      <AbsolutePoint location="56,608" />
+      <AbsolutePoint location="56,658" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/updateInfo.do,updateok,/m_scgl_1.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1378,88" />
+      <AbsolutePoint location="1378,153" />
+      <AbsolutePoint location="881,153" />
+      <AbsolutePoint location="881,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/m_select.do,select,/m_scgl_1.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="562,88" />
+      <AbsolutePoint location="562,123" />
+      <AbsolutePoint location="727,123" />
+      <AbsolutePoint location="727,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

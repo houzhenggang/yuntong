@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <init-param>
+      <param-name>config/SHGL</param-name>
+      <param-value>/WEB-INF/struts-config-SHGL.xml</param-value>
+    </init-param>
+     <init-param>
+      <param-name>config/PWGL</param-name>
+      <param-value>/WEB-INF/struts-config-PWGL.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>config/SCGL</param-name>
+      <param-value>/WEB-INF/struts-config-SCGL.xml</param-value>
+    </init-param>
+
+    <init-param>
+      <param-name>config/JBZL</param-name>
+      <param-value>/WEB-INF/struts-config-JBZL.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>config/PSGL</param-name>
+      <param-value>/WEB-INF/struts-config-PSGL.xml</param-value>
+    </init-param>
+      <init-param>
+      <param-name>config/CXTJ</param-name>
+      <param-value>/WEB-INF/struts-config-CXTJ.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>config/Financial</param-name>
+      <param-value>/WEB-INF/struts-config-financial.xml</param-value>
+    </init-param>
+    <init-param>
+   <param-name></param-name>
+   <param-value></param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>display</servlet-name>
+    <servlet-class>org.jfree.chart.servlet.DisplayChart</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>display</servlet-name>
+    <url-pattern>/display</url-pattern>
+  </servlet-mapping>
+</web-app>
+

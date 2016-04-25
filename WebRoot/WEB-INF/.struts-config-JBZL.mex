@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/y_GoCZY.do" location="154,139" dimension="150,100" />
+  <StrutsActivity path="/y_UserSplit.do" location="75,270" dimension="150,100" />
+  <StrutsActivity path="/y_FindU1.do" location="15,30" dimension="150,100" />
+  <StrutsActivity path="/y_addUserInfo.do" location="0,150" dimension="150,100" />
+  <StrutsActivity path="/y_GoYHQX.do" location="200,96" dimension="150,100" />
+  <StrutsActivity path="/y_UpdataRole.do" location="272,269" dimension="150,100" />
+  <StrutsActivity path="/y_GoXGMM.do" location="281,405" dimension="150,100" />
+  <StrutsActivity path="/y_UpdatePwd.do" location="39,311" dimension="150,100" />
+  <StrutsActivity path="/y_GoYsyf.do" location="221,252" dimension="150,100" />
+  <StrutsActivity path="/y_selectYSYF.do" location="183,90" dimension="150,100" />
+  <StrutsActivity path="/y_spysyf.do" location="76,137" dimension="150,100" />
+  <StrutsActivity path="/y_deleteYSYF.do" location="60,285" dimension="150,100" />
+  <StrutsActivity path="/y_addAFinfo.do" location="209,57" dimension="150,100" />
+  <StrutsActivity path="/Y_CZY_1.jsp" location="350,50" dimension="112,48" />
+  <StrutsActivity path="/Y_YHQX_1.jsp" location="650,150" dimension="118,48" />
+  <StrutsActivity path="/Y_XGMM_1.jsp" location="650,250" dimension="118,48" />
+  <StrutsActivity path="/Y_YSYF.jsp" location="650,350" dimension="106,48" />
+  <StrutsTransition id="/y_addAFinfo.do,go,/Y_YSYF.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="359,113" />
+      <AbsolutePoint location="477,113" />
+      <AbsolutePoint location="477,354" />
+      <AbsolutePoint location="650,354" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_spysyf.do,go,/Y_YSYF.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="151,187" />
+      <AbsolutePoint location="703,374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_GoCZY.do,go,/Y_CZY_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="304,222" />
+      <AbsolutePoint location="364,222" />
+      <AbsolutePoint location="364,98" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_FindU1.do,go,/Y_CZY_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="165,35" />
+      <AbsolutePoint location="376,35" />
+      <AbsolutePoint location="376,50" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_addUserInfo.do,go,/Y_CZY_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="30,250" />
+      <AbsolutePoint location="30,535" />
+      <AbsolutePoint location="436,535" />
+      <AbsolutePoint location="436,98" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Y_CZY_1.jsp,null,/y_addUserInfo.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="406,50" />
+      <AbsolutePoint location="406,-45" />
+      <AbsolutePoint location="-75,-45" />
+      <AbsolutePoint location="-75,200" />
+      <AbsolutePoint location="0,200" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_GoYsyf.do,go,/Y_YSYF.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="257,352" />
+      <AbsolutePoint location="257,715" />
+      <AbsolutePoint location="703,715" />
+      <AbsolutePoint location="703,398" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_selectYSYF.do,go,/Y_YSYF.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="194,90" />
+      <AbsolutePoint location="194,-120" />
+      <AbsolutePoint location="843,-120" />
+      <AbsolutePoint location="843,374" />
+      <AbsolutePoint location="756,374" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_UserSplit.do,go,/Y_CZY_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="215,370" />
+      <AbsolutePoint location="215,625" />
+      <AbsolutePoint location="567,625" />
+      <AbsolutePoint location="567,74" />
+      <AbsolutePoint location="462,74" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_GoXGMM.do,go,/Y_XGMM_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="431,455" />
+      <AbsolutePoint location="507,455" />
+      <AbsolutePoint location="507,284" />
+      <AbsolutePoint location="650,284" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_GoYHQX.do,go,/Y_YHQX_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="350,165" />
+      <AbsolutePoint location="650,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_UpdataRole.do,go,/Y_YHQX_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="406,269" />
+      <AbsolutePoint location="406,230" />
+      <AbsolutePoint location="709,230" />
+      <AbsolutePoint location="709,198" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_UpdatePwd.do,go,/Y_XGMM_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="189,385" />
+      <AbsolutePoint location="627,385" />
+      <AbsolutePoint location="627,313" />
+      <AbsolutePoint location="709,313" />
+      <AbsolutePoint location="709,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

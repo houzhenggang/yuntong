@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+	 <data-sources />
+	<form-beans />
+	<global-exceptions />
+  <global-forwards />
+  
+  
+  <action-mappings >
+    <action path="/g_CXTJ" type="org.springframework.web.struts.DelegatingActionProxy" />
+   </action-mappings>
+    
+    
+    <controller processorClass="com.yuntong.requestProcessor.MyRequestProcessor"></controller>
+ <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+  	<set-property property="contextConfigLocation" value="/WEB-INF/classes/spring.xml"/>
+  </plug-in>
+  
+</struts-config>

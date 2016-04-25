@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+ <form-beans >
+    <form-bean name="x_perForm" type="com.yuntong.form.X_perForm" />
+	<form-bean name="x_pickinfoForm" type="com.yuntong.form.X_pickinfoForm"></form-bean>
+    <form-bean name="x_loseForm" type="com.yuntong.form.X_loseForm" />
+  </form-beans>
+<action-mappings>
+
+    <action
+      parameter="test"
+      path="/x_Financial"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="lose" path="/lose.jsp" />
+      <forward name="ribose" path="/ribose.jsp" />
+      <forward name="per" path="/Peraccept.jsp" />
+      <forward name="few" path="/fewMoney.jsp" />
+      <forward name="pick" path="/pick-up.jsp" />
+    </action>
+    
+    <action
+      attribute="x_perForm"
+      name="x_perForm"
+      parameter="test"
+      path="/x_per"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/Peraccept.jsp" />
+      <forward name="good" path="/goods.jsp" />
+    </action>
+    
+    <action
+      attribute="x_pickinfoForm"
+      name="x_pickinfoForm"
+      parameter="test"
+      path="/x_pickinfo"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/pick-up.jsp" />
+      <forward name="selcet" path="/pick-upInfo.jsp" />
+      <forward name="good" path="/goods.jsp" />
+    </action>
+    
+    <action
+      parameter="test"
+      path="/x_pick"
+       type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="info" path="/pick-upInfo.jsp" />
+      <forward name="good" path="/goods.jsp" />
+    </action>
+    
+    <action
+      parameter="good"
+      path="/x_Goods"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="good" path="/Peraccept.jsp"/>
+      <forward name="pick" path="/pick-up.jsp"/>
+      <forward name="pickinfo" path="/pick-upInfo.jsp"/>
+    </action>
+   
+    <action
+      parameter="ribose"
+      path="/x_Ribose"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="var" path="/ribose.jsp" />
+    </action>
+    
+    <action
+      attribute="x_loseForm"
+      name="x_loseForm"
+      path="/x_lose"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy" >
+      <forward name="lose" path="/lose.jsp"/>
+     </action>
+   
+    <action  
+      
+      path="/x_few"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/fewMoney.jsp" />
+    </action>
+    
+    <action
+      path="/x_addLose"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/lose.jsp" />
+    </action> 
+    
+      
+
+</action-mappings>
+	<controller processorClass="com.yuntong.requestProcessor.MyRequestProcessor"></controller>
+	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+  		<set-property property="contextConfigLocation" value="/WEB-INF/classes/spring.xml"/>
+  	</plug-in>
+
+
+ 
+</struts-config>
+	

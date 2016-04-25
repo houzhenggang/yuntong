@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/j_FareMathAjaxAction.do" location="0,564" dimension="308,88" />
+  <StrutsActivity path="/jfrareMathAction.do" location="0,0" dimension="308,88" />
+  <StrutsActivity path="/j_RiChanged.do" location="353,564" dimension="308,88" />
+  <StrutsActivity path="/j_ShaoShouKuan.do" location="408,0" dimension="308,88" />
+  <StrutsActivity path="/j_ShaoShouKuanAjax.do" location="0,697" dimension="308,88" />
+  <StrutsActivity path="/checkRigAjaxAction.do" location="353,697" dimension="308,88" />
+  <StrutsActivity path="/j_GetStateAction.do" location="0,282" dimension="308,88" />
+  <StrutsActivity path="/j_CheckRigAction.do" location="816,0" dimension="308,88" />
+  <StrutsActivity path="/j_RigHotLineAction.do" location="353,282" dimension="308,88" />
+  <StrutsActivity path="/j_googleFYGS.do" location="82,186" dimension="150,100" />
+  <StrutsActivity path="/Y_Index.jsp" location="516,188" dimension="91,49" />
+  <StrutsActivity path="/J_CheckRig.jsp" location="101,470" dimension="106,49" />
+  <StrutsActivity path="/PWGL/FactoryInfo.jsp" location="437,470" dimension="140,49" />
+  <StrutsActivity path="/yuntong/PWGL/J_FareMath.jsp" location="950,350" dimension="184,49" />
+  <StrutsActivity path="/yuntong/PWGL/J_ShaoShouKuan.jsp" location="650,450" dimension="210,49" />
+  <StrutsActivity path="/PWGL/J_FareMath.jsp" location="950,450" dimension="140,49" />
+  <StrutsActivity path="/PWGL/j_GetStateAction.do" location="950,550" dimension="173,75" />
+  <StrutsActivity path="/PWGL/J_ShaoShouKuan.jsp" location="950,750" dimension="166,49" />
+  <StrutsTransition id="/j_CheckRigAction.do,indexs,/PWGL/J_ShaoShouKuan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="935,88" />
+      <AbsolutePoint location="935,770" />
+      <AbsolutePoint location="950,770" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/j_GetStateAction.do,action,/J_CheckRig.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="154,370" />
+      <AbsolutePoint location="154,470" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/j_CheckRigAction.do,indexs,/Y_Index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="970,88" />
+      <AbsolutePoint location="970,138" />
+      <AbsolutePoint location="592,138" />
+      <AbsolutePoint location="592,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/j_ShaoShouKuan.do,index,/PWGL/J_ShaoShouKuan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="562,44" />
+      <AbsolutePoint location="1033,774" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/jfrareMathAction.do,fare,/PWGL/J_FareMath.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="154,88" />
+      <AbsolutePoint location="154,133" />
+      <AbsolutePoint location="905,133" />
+      <AbsolutePoint location="905,474" />
+      <AbsolutePoint location="950,474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/j_ShaoShouKuan.do,index,/yuntong/PWGL/j_GetStateAction.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="676,88" />
+      <AbsolutePoint location="676,414" />
+      <AbsolutePoint location="1058,414" />
+      <AbsolutePoint location="1058,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/j_ShaoShouKuan.do,index,/Y_Index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="562,88" />
+      <AbsolutePoint location="562,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/jfrareMathAction.do,fare,/yuntong/PWGL/J_FareMath.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="154,88" />
+      <AbsolutePoint location="154,168" />
+      <AbsolutePoint location="1042,168" />
+      <AbsolutePoint location="1042,350" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/j_CheckRigAction.do,indexs,/yuntong/PWGL/J_ShaoShouKuan.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="845,88" />
+      <AbsolutePoint location="845,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/j_CheckRigAction.do,indexs,/PWGL/j_GetStateAction.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="970,44" />
+      <AbsolutePoint location="1036,587" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/j_RigHotLineAction.do,view,/PWGL/FactoryInfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="507,370" />
+      <AbsolutePoint location="507,470" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/j_ShaoShouKuan.do,index,/PWGL/j_GetStateAction.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="676,88" />
+      <AbsolutePoint location="676,414" />
+      <AbsolutePoint location="1105,414" />
+      <AbsolutePoint location="1105,550" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/jfrareMathAction.do,fare,/Y_Index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="154,88" />
+      <AbsolutePoint location="154,138" />
+      <AbsolutePoint location="531,138" />
+      <AbsolutePoint location="531,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

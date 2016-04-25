@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans />
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+      <!-- 从主页先到这个 Action -->
+    <action
+      path="/m_scgl_1"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward name="ok" path="/M_scgl_1.jsp" />
+     
+    </action>
+    
+    <!-- 删除 -->
+    <action path="/m_delteInfo" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="delete" path="/m_scgl_1.do" redirect="true"/>
+      
+    </action>
+    <action path="/m_select" type="org.springframework.web.struts.DelegatingActionProxy" >
+      <forward name="select" path="/m_scgl_1.do" />
+      
+    </action>
+    <!-- 添加 -->
+    <action
+      path="/addInfo"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward name="addok" path="/m_scgl_1.do" />
+    </action>
+    
+    <!-- 更新 -->
+    <action
+      path="/updateInfo"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward name="updateok" path="/m_scgl_1.do" />
+    </action>
+    <action
+      path="/findById"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward name="findok" path="/M_scgl_2.jsp" />
+      <forward name="error" path="/M_scgll_2.jsp" />
+    </action>
+    <action
+      path="/m_updataAjaxAction"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" />
+    <action
+      path="/m_typing"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" />
+    <action path="/m_googleTHDJ" type="org.springframework.web.struts.DelegatingActionProxy" />
+    
+    
+    
+
+
+  </action-mappings>
+
+  <controller processorClass="com.yuntong.requestProcessor.MyRequestProcessor"></controller>
+  <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+  	<set-property property="contextConfigLocation" value="/WEB-INF/classes/spring.xml"/>
+  </plug-in>
+</struts-config>
+

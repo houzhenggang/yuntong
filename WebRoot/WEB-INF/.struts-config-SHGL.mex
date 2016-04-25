@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/y_GoSHGL.do" location="50,50" dimension="244,84" />
+  <StrutsActivity path="/y_SelectFactory.do" location="350,50" dimension="352,84" />
+  <StrutsActivity path="/y_SHGLFactroy.do" location="950,50" dimension="274,84" />
+  <StrutsActivity path="/y_FindMarketByAreaID.do" location="165,300" dimension="150,100" />
+  <StrutsActivity path="/y_FindClientByID.do" location="300,150" dimension="150,100" />
+  <StrutsActivity path="/y_SHDJbuck1.do" location="-15,315" dimension="150,100" />
+  <StrutsActivity path="/y_SHDJClientAction.do" location="960,225" dimension="304,84" />
+  <StrutsActivity path="/y_SHDJGoods.do" location="375,315" dimension="150,100" />
+  <StrutsActivity path="/y_GOSHDJ.do" location="105,450" dimension="150,100" />
+  <StrutsActivity path="/y_GoDHQR.do" location="792,117" dimension="150,100" />
+  <StrutsActivity path="/y_FindRegisterByID.do" location="125,191" dimension="150,100" />
+  <StrutsActivity path="/y_UpdateRegisterType.do" location="270,630" dimension="150,100" />
+  <StrutsActivity path="/y_GoWGHP.do" location="-105,75" dimension="150,100" />
+  <StrutsActivity path="/y_SplitWGHP.do" location="-60,435" dimension="150,100" />
+  <StrutsActivity path="/y_findR1.do" location="-89,259" dimension="150,100" />
+  <StrutsActivity path="/y_FindR2.do" location="221,162" dimension="150,100" />
+  <StrutsActivity path="/y_deleteRegisterByID.do" location="128,161" dimension="150,100" />
+  <StrutsActivity path="/y_Goshdj2.do" location="-145,78" dimension="150,100" />
+  <StrutsActivity path="/y_GoSHDJ.do" location="-209,142" dimension="150,100" />
+  <StrutsActivity path="/y_CKXX.do" location="171,148" dimension="150,100" />
+  <StrutsActivity path="/y_disrepareInfo.do" location="393,292" dimension="150,100" />
+  <StrutsActivity path="/y_selectFinfo.do" location="80,186" dimension="150,100" />
+  <StrutsActivity path="/y_findcinfo.do" location="108,154" dimension="150,100" />
+  <StrutsActivity path="/Y_shgl_1.jsp" location="-45,225" dimension="118,48" />
+  <StrutsActivity path="/Y_shgl_2.jsp" location="450,240" dimension="118,48" />
+  <StrutsActivity path="/Y_shgl_3.jsp" location="350,450" dimension="118,48" />
+  <StrutsActivity path="/yuntong/SHGL/Y_shgl_2.jsp" location="650,350" dimension="196,48" />
+  <StrutsActivity path="/Y_shgl_4.jsp" location="650,450" dimension="118,48" />
+  <StrutsActivity path="/SHGL/Y_shgl_1.jsp" location="650,250" dimension="148,48" />
+  <StrutsActivity path="/Y_dhqr_1.jsp" location="350,550" dimension="118,48" />
+  <StrutsActivity path="/Y_wghp_1.jsp" location="50,650" dimension="118,48" />
+  <StrutsActivity path="/Y_SHDJ_1.jsp" location="650,650" dimension="118,48" />
+  <StrutsActivity path="/yuntong/Y_Index.jsp" location="950,450" dimension="160,48" />
+  <StrutsActivity path="/SHGL/Y_dhqr_1.jsp" location="650,550" dimension="148,48" />
+  <StrutsActivity path="" location="950,550" dimension="40,48" />
+  <StrutsActivity path="/SHGL/Y_shgl_2.jsp" location="1250,550" dimension="148,48" />
+  <StrutsActivity path="/y_googleDHQR.do" location="130,143" dimension="150,100" />
+  <StrutsActivity path="/y_googleSHDJ.do" location="307,103" dimension="150,100" />
+  <StrutsTransition id="/y_GoSHDJ.do,go,/Y_SHDJ_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-134,242" />
+      <AbsolutePoint location="-134,613" />
+      <AbsolutePoint location="709,613" />
+      <AbsolutePoint location="709,650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_GoWGHP.do,gowghp,/Y_wghp_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-30,75" />
+      <AbsolutePoint location="-30,-25" />
+      <AbsolutePoint location="-284,-25" />
+      <AbsolutePoint location="-284,674" />
+      <AbsolutePoint location="50,674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yuntong/SHGL/Y_shgl_2.jsp,null,/y_SHDJClientAction.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="846,374" />
+      <AbsolutePoint location="1095,374" />
+      <AbsolutePoint location="1095,309" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_SHDJClientAction.do,go3,/Y_shgl_3.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1125,309" />
+      <AbsolutePoint location="1125,430" />
+      <AbsolutePoint location="409,430" />
+      <AbsolutePoint location="409,450" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_SHGLFactroy.do,go2,/Y_shgl_2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,92" />
+      <AbsolutePoint location="747,92" />
+      <AbsolutePoint location="747,197" />
+      <AbsolutePoint location="509,197" />
+      <AbsolutePoint location="509,240" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_GOSHDJ.do,null,/SHGL/Y_shgl_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="183,550" />
+      <AbsolutePoint location="183,773" />
+      <AbsolutePoint location="921,773" />
+      <AbsolutePoint location="921,274" />
+      <AbsolutePoint location="798,274" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Y_wghp_1.jsp,null,/y_findR1.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="120,650" />
+      <AbsolutePoint location="120,565" />
+      <AbsolutePoint location="-180,565" />
+      <AbsolutePoint location="-180,309" />
+      <AbsolutePoint location="-89,309" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_SHDJbuck1.do,null,/Y_shgl_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="68,315" />
+      <AbsolutePoint location="68,273" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_FindR2.do,gowghp,/Y_wghp_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="330,262" />
+      <AbsolutePoint location="330,565" />
+      <AbsolutePoint location="150,565" />
+      <AbsolutePoint location="150,650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_GoSHGL.do,shdj,/Y_shgl_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="58,134" />
+      <AbsolutePoint location="58,225" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/Y_shgl_3.jsp,null,/y_SHDJGoods.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="379,450" />
+      <AbsolutePoint location="379,415" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_SHDJGoods.do,go4,/Y_shgl_4.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="483,415" />
+      <AbsolutePoint location="483,474" />
+      <AbsolutePoint location="650,474" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_SplitWGHP.do,gowghp,/Y_wghp_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="65,535" />
+      <AbsolutePoint location="65,650" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_GoDHQR.do,godhqr,/Y_dhqr_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="792,167" />
+      <AbsolutePoint location="633,167" />
+      <AbsolutePoint location="633,574" />
+      <AbsolutePoint location="468,574" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_findR1.do,gowghp,/Y_wghp_1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-14,309" />
+      <AbsolutePoint location="109,674" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/y_Goshdj2.do,null,/Y_shgl_2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="-145,127" />
+      <AbsolutePoint location="-359,127" />
+      <AbsolutePoint location="-359,863" />
+      <AbsolutePoint location="558,863" />
+      <AbsolutePoint location="558,288" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

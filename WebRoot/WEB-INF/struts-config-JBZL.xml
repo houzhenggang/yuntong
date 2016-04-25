@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="y_insertUserInfoForm" type="com.yuntong.action.actionform.Y_insertUserInfoForm" />
+    <form-bean name="y_UpdatePwdForm" type="com.yuntong.action.actionform.Y_UpdatePwdForm" />
+    <form-bean name="y_addAFinfoForm" type="com.yuntong.action.actionform.Y_addAFinfoForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action path="/y_GoCZY" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="go" path="/Y_CZY_1.jsp" />      
+    </action>
+    <action path="/y_UserSplit" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="go" path="/Y_CZY_1.jsp"/>
+    </action>
+    <action path="/y_FindU1" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="go" path="/Y_CZY_1.jsp" />
+    </action>
+    <action
+      attribute="y_insertUserInfoForm"
+      input="/Y_CZY_1.jsp"
+      name="y_insertUserInfoForm"
+      path="/y_addUserInfo"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="go" path="/Y_CZY_1.jsp" redirect="true" />
+      </action>
+    <action path="/y_GoYHQX" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="go" path="/Y_YHQX_1.jsp" />
+    </action>
+    <action path="/y_UpdataRole" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="go" path="/Y_YHQX_1.jsp" />
+    </action>
+    <action path="/y_GoXGMM" type="com.yuntong.action.Y_GoXGMMAction">
+      <forward name="go" path="/Y_XGMM_1.jsp" />
+    </action>
+    <action
+      attribute="y_UpdatePwdForm"
+      name="y_UpdatePwdForm"
+      path="/y_UpdatePwd"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward
+        name="go"
+        path="/Y_XGMM_1.jsp"
+        redirect="true" />
+    </action>
+    <action path="/y_GoYsyf" type="org.springframework.web.struts.DelegatingActionProxy">
+    	<forward name="go" path="/Y_YSYF.jsp"></forward>
+    </action>
+    <action path="/y_selectYSYF" type="org.springframework.web.struts.DelegatingActionProxy" >
+    	<forward name="go" path="/Y_YSYF.jsp"></forward>
+    </action>
+    <action path="/y_spysyf" type="org.springframework.web.struts.DelegatingActionProxy">
+    	<forward name="go" path="/Y_YSYF.jsp"></forward>
+    </action>
+    <action path="/y_deleteYSYF" type="org.springframework.web.struts.DelegatingActionProxy" />
+    <action
+      attribute="y_addAFinfoForm"
+      name="y_addAFinfoForm"
+      path="/y_addAFinfo"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="go" redirect="true" path="/Y_YSYF.jsp" />
+    </action>    
+  </action-mappings>
+
+  <controller processorClass="com.yuntong.requestProcessor.MyRequestProcessor"></controller>
+  <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+  	<set-property property="contextConfigLocation" value="/WEB-INF/classes/spring.xml"/>
+  </plug-in>
+</struts-config>
+

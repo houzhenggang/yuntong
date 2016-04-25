@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/x_Financial.do" location="1224,0" dimension="308,88" />
+  <StrutsActivity path="/x_per.do" location="2040,0" dimension="308,88" />
+  <StrutsActivity path="/x_pickinfo.do" location="2856,0" dimension="308,88" />
+  <StrutsActivity path="/x_pick.do" location="3264,0" dimension="308,88" />
+  <StrutsActivity path="/x_Goods.do" location="2448,0" dimension="308,88" />
+  <StrutsActivity path="/x_Ribose.do" location="816,0" dimension="308,88" />
+  <StrutsActivity path="/x_lose.do" location="408,0" dimension="308,88" />
+  <StrutsActivity path="/x_addLose.do" location="0,0" dimension="308,88" />
+  <StrutsActivity path="/lose.jsp" location="507,298" dimension="70,49" />
+  <StrutsActivity path="/ribose.jsp" location="969,298" dimension="80,49" />
+  <StrutsActivity path="/Peraccept.jsp" location="2067,298" dimension="99,49" />
+  <StrutsActivity path="/fewMoney.jsp" location="1531,298" dimension="101,49" />
+  <StrutsActivity path="/pick-up.jsp" location="2559,298" dimension="85,49" />
+  <StrutsActivity path="/goods.jsp" location="2965,298" dimension="80,49" />
+  <StrutsActivity path="/pick-upInfo.jsp" location="3274,298" dimension="105,49" />
+  <StrutsActivity path="/x_few.do.do" location="1632,0" dimension="308,88" />
+  <StrutsTransition id="/x_Financial.do,few,/fewMoney.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1378,88" />
+      <AbsolutePoint location="1378,268" />
+      <AbsolutePoint location="1556,268" />
+      <AbsolutePoint location="1556,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_few.do.do,ok,/fewMoney.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1786,44" />
+      <AbsolutePoint location="1581,322" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_Ribose.do,var,/ribose.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="970,88" />
+      <AbsolutePoint location="970,118" />
+      <AbsolutePoint location="989,118" />
+      <AbsolutePoint location="989,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_per.do,ok,/Peraccept.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2117,88" />
+      <AbsolutePoint location="2117,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_Goods.do,pickinfo,/pick-upInfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2704,88" />
+      <AbsolutePoint location="2704,148" />
+      <AbsolutePoint location="3292,148" />
+      <AbsolutePoint location="3292,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_per.do,good,/goods.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2271,88" />
+      <AbsolutePoint location="2271,178" />
+      <AbsolutePoint location="2979,178" />
+      <AbsolutePoint location="2979,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_addLose.do,ok,/lose.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="154,88" />
+      <AbsolutePoint location="154,118" />
+      <AbsolutePoint location="519,118" />
+      <AbsolutePoint location="519,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_Goods.do,pick,/pick-up.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2602,88" />
+      <AbsolutePoint location="2602,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_Financial.do,pick,/pick-up.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1501,88" />
+      <AbsolutePoint location="1501,208" />
+      <AbsolutePoint location="2573,208" />
+      <AbsolutePoint location="2573,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_Goods.do,good,/Peraccept.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2499,88" />
+      <AbsolutePoint location="2499,238" />
+      <AbsolutePoint location="2150,238" />
+      <AbsolutePoint location="2150,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_Financial.do,per,/Peraccept.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1439,88" />
+      <AbsolutePoint location="1439,238" />
+      <AbsolutePoint location="2084,238" />
+      <AbsolutePoint location="2084,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_lose.do,lose,/lose.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="562,88" />
+      <AbsolutePoint location="562,118" />
+      <AbsolutePoint location="542,118" />
+      <AbsolutePoint location="542,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_Financial.do,ribose,/ribose.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1316,88" />
+      <AbsolutePoint location="1316,178" />
+      <AbsolutePoint location="1029,178" />
+      <AbsolutePoint location="1029,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_pick.do,good,/goods.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3341,88" />
+      <AbsolutePoint location="3341,178" />
+      <AbsolutePoint location="3032,178" />
+      <AbsolutePoint location="3032,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_Financial.do,lose,/lose.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1254,88" />
+      <AbsolutePoint location="1254,148" />
+      <AbsolutePoint location="566,148" />
+      <AbsolutePoint location="566,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_pickinfo.do,ok,/pick-up.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="2907,88" />
+      <AbsolutePoint location="2907,208" />
+      <AbsolutePoint location="2630,208" />
+      <AbsolutePoint location="2630,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_pickinfo.do,selcet,/pick-upInfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3112,88" />
+      <AbsolutePoint location="3112,118" />
+      <AbsolutePoint location="3327,118" />
+      <AbsolutePoint location="3327,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_pick.do,info,/pick-upInfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3495,88" />
+      <AbsolutePoint location="3495,118" />
+      <AbsolutePoint location="3362,118" />
+      <AbsolutePoint location="3362,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/x_pickinfo.do,good,/goods.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="3010,88" />
+      <AbsolutePoint location="3010,178" />
+      <AbsolutePoint location="3005,178" />
+      <AbsolutePoint location="3005,298" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

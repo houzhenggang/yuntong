@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!--====================================== 数据管理 ====================================-->
+	<!-- 创建数据源 -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="url">
+			<value>jdbc:microsoft:sqlserver://127.0.0.1:1433;databasename=BeltLine</value>
+		</property>
+		<property name="username">
+			<value>sa</value>
+		</property>
+		<property name="password">
+			<value></value>
+		</property>
+		<property name="driverClassName">
+			<value>com.microsoft.jdbc.sqlserver.SQLServerDriver</value>
+		</property>
+	</bean>
+	
+	<!-- 接管hibernate -->
+	<!-- sessionFactory的名字 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<!-- 导入数据源 -->
+		<property name="dataSource">
+			<ref bean="dataSource"/>			
+		</property>
+		<!-- 设置hibernate配置属性 -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>
+				<prop key="hibernate.connection.autocommit">false</prop>
+				<prop key="hibernate.use_outer_join">true</prop>				
+			</props>
+		</property>
+		<!--============================= po影射文件路径 ==================================-->
+		<property name="mappingResources">
+			<list>
+				<value>com/yuntong/hibernate/database/po/TAgioType.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TPaymentOfGoodsStyle.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TTruckInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TDriverInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TUserInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TMarketInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TRegisterInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TCue.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TTrafficLog.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TTruckStyle.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TCarType.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TRoadway.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TAreaFreightInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TAreaInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TGrade.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TDepartment.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TClientInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TRegisterState.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TAgioInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TFactoryInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TGoodsInfo.hbm.xml</value>				
+				<value>com/yuntong/hibernate/database/po/TDrawInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TAffiche.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TDisrepareInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TFreightStyle.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TRoleInfo.hbm.xml</value>
+				<value>com/yuntong/hibernate/database/po/TFilialeInfo.hbm.xml</value>				
+			</list>
+		</property>
+	</bean>
+
+	
+	<!-- =====================================DAO开始========================================= -->
+		<bean id="TUserInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TUserInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TRegisterStateDAO"
+		class="com.yuntong.hibernate.database.dao.TRegisterStateDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TFreightStyleDAO"
+		class="com.yuntong.hibernate.database.dao.TFreightStyleDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TFilialeInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TFilialeInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TAreaFreightInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TAreaFreightInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TCarTypeDAO"
+		class="com.yuntong.hibernate.database.dao.TCarTypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TAgioTypeDAO"
+		class="com.yuntong.hibernate.database.dao.TAgioTypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TFactoryInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TFactoryInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TDrawInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TDrawInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TTruckInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TTruckInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TTruckStyleDAO"
+		class="com.yuntong.hibernate.database.dao.TTruckStyleDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TAfficheDAO"
+		class="com.yuntong.hibernate.database.dao.TAfficheDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TRoadwayDAO"
+		class="com.yuntong.hibernate.database.dao.TRoadwayDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TAreaInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TAreaInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TPaymentOfGoodsStyleDAO"
+		class="com.yuntong.hibernate.database.dao.TPaymentOfGoodsStyleDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TClientInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TClientInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TRegisterInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TRegisterInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TGoodsInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TGoodsInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TMarketInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TMarketInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TAgioInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TAgioInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TGradeDAO"
+		class="com.yuntong.hibernate.database.dao.TGradeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TDriverInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TDriverInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TDepartmentDAO"
+		class="com.yuntong.hibernate.database.dao.TDepartmentDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TRoleInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TRoleInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TDisrepareInfoDAO"
+		class="com.yuntong.hibernate.database.dao.TDisrepareInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TCueDAO"
+		class="com.yuntong.hibernate.database.dao.TCueDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TTrafficLogDAO"
+		class="com.yuntong.hibernate.database.dao.TTrafficLogDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- =====================================DAO结束========================================= -->		
+	
+	<!-- =====================================配置service类开始========================================= -->
+	<bean id="Y_UserManagerService" class="com.yuntong.service.impl.Y_UserManagerService">
+		<property name="userInfoDAO" ref="TUserInfoDAO"></property>
+		<property name="roleInfoDAO" ref="TRoleInfoDAO"></property>
+		<property name="filialeInfoDAO" ref="TFilialeInfoDAO"></property>
+		<property name="afficheDAO" ref="TAfficheDAO"></property>
+		<property name="cueDAO" ref="TCueDAO"></property>
+	</bean>
+	<bean id="Y_AreaManagerService" class="com.yuntong.service.impl.Y_AreaInfoManager">
+		<property name="infoDAO" ref="TAreaInfoDAO"></property>
+	</bean>
+	<bean id="Y_FactoryManagerService" class="com.yuntong.service.impl.Y_FactoryManagerService">
+		<property name="infoDAO" ref="TFactoryInfoDAO"></property>
+	</bean>
+	<bean id="Y_MarketManagerService" class="com.yuntong.service.impl.Y_MarketManagerService">
+		<property name="infoDAO" ref="TMarketInfoDAO"></property>
+	</bean>
+	<bean id="Y_ClientManagerService" class="com.yuntong.service.impl.Y_ClientManagerService">
+		<property name="infoDAO" ref="TClientInfoDAO"></property>
+	</bean>
+	<bean id="Y_GoodsManagerService" class="com.yuntong.service.impl.Y_GoodsManagerService">
+		<property name="styleDAO" ref="TFreightStyleDAO"></property>
+		<property name="goodsStyleDAO" ref="TPaymentOfGoodsStyleDAO"></property>
+	</bean>
+	<bean id="Y_RegisterManagerService" class="com.yuntong.service.impl.Y_RegisterManagerService">
+		<property name="cinfoDAO" ref="TClientInfoDAO"></property>
+		<property name="finfoDAO" ref="TFactoryInfoDAO"></property>
+		<property name="ginfoDAO" ref="TGoodsInfoDAO"></property>
+		<property name="rinfoDAO" ref="TRegisterInfoDAO"></property>
+		<property name="areaInfoDAO" ref="TAreaInfoDAO"></property>
+		<property name="marketInfoDAO" ref="TMarketInfoDAO"></property>
+		<property name="drawInfoDAO" ref="TDrawInfoDAO"></property>
+		<property name="disrepareInfoDAO" ref="TDisrepareInfoDAO"></property>
+		<property name="driverInfoDAO" ref="TDriverInfoDAO"></property>
+		<property name="truckInfoDAO" ref="TTruckInfoDAO"></property>
+	</bean>
+	<bean id="Y_SplitRegisterInfo" class="com.yuntong.service.impl.Y_SplitRegisterInfo">
+		<property name="infoDAO" ref="TRegisterInfoDAO"></property>
+		<property name="clientInfoDAO" ref="TClientInfoDAO"></property>
+		<property name="factoryInfoDAO" ref="TFactoryInfoDAO"></property>
+	</bean>
+	<bean id="Y_FilialeManagerService" class="com.yuntong.service.impl.Y_FilialeManagerService">
+		<property name="infoDAO" ref="TFilialeInfoDAO"></property>
+	</bean>
+	<bean id="Y_RoleManagerService" class="com.yuntong.service.impl.Y_RoleManagerService">
+		<property name="roleInfoDAO" ref="TRoleInfoDAO"></property>
+		<property name="userInfoDAO" ref="TUserInfoDAO"></property>
+	</bean>
+	<bean id="Y_AreaFreightInfoService" class="com.yuntong.service.impl.Y_AreaFreightInfoService">
+		<property name="freightInfoDAO" ref="TAreaFreightInfoDAO"></property>
+		<property name="areaInfoDAO" ref="TAreaInfoDAO"></property>
+	</bean>
+	
+	<!-- =====================================配置service类结束========================================= -->
+	<!-- =====================================配置action开始========================================= -->
+	<bean name="/SHGL/y_googleSHDJ" class="com.yuntong.action.ajaxaction.Y_googleSHDJAction">
+		<property name="registerManagerService" ref="Y_RegisterManagerService"></property>
+	</bean>
+	<bean name="/SHGL/y_googleDHQR" class="com.yuntong.action.ajaxaction.Y_googleDHQRAction">
+		<property name="registerManagerService" ref="Y_RegisterManagerService"></property>
+	</bean>
+	<bean name="/SHGL/y_findcinfo" class="com.yuntong.action.Y_findcinfoAction">
+		<property name="clientManagerService" ref="Y_ClientManagerService"></property>
+	</bean>
+	<bean name="/SHGL/y_selectFinfo" class="com.yuntong.action.Y_selectFinfoAction">
+		<property name="factoryManagerService" ref="Y_FactoryManagerService"></property>
+	</bean>
+	<bean name="/JBZL/y_addAFinfo" class="com.yuntong.action.Y_addAFinfoAction">
+		<property name="freightInfoService" ref="Y_AreaFreightInfoService"></property>
+	</bean>
+	<bean name="/JBZL/y_deleteYSYF" class="com.yuntong.action.ajaxaction.Y_deleteYSYFAction">
+		<property name="areaFreightInfoService" ref="Y_AreaFreightInfoService"></property>
+	</bean>
+	<bean name="/JBZL/y_spysyf" class="com.yuntong.action.Y_spysyfAction">
+		<property name="areaFreightInfoService" ref="Y_AreaFreightInfoService"></property>
+	</bean>
+	<bean name="/JBZL/y_selectYSYF" class="com.yuntong.action.Y_selectYSYFAction">
+		<property name="areaFreightInfoService" ref="Y_AreaFreightInfoService"></property>
+	</bean>
+	<bean name="/JBZL/y_GoYsyf" class="com.yuntong.action.Y_GoYsyfAction">
+		<property name="areaFreightInfoService" ref="Y_AreaFreightInfoService"></property>
+	</bean>
+	<bean name="/y_getInfo" class="com.yuntong.action.ajaxaction.Y_getInfoAction">
+	
+	</bean>
+	<bean name="/y_Login" class="com.yuntong.action.Y_LoginAction">
+   	<property name="service" ref="Y_UserManagerService">
+   	</property>
+   </bean>
+   <bean name="/SHGL/y_SelectFactory" class="com.yuntong.action.ajaxaction.Y_SelectFactoryAction">
+   	<property name="service" ref="Y_FactoryManagerService">
+   	</property>
+   </bean>
+   <bean name="/SHGL/y_GoSHGL" class="com.yuntong.action.Y_GoSHGLAction">
+   	<property name="service" ref="Y_AreaManagerService">
+   	</property>
+   </bean>
+   <bean name="/SHGL/y_SHGLFactroy" class="com.yuntong.action.Y_SHGLFactroyAction">
+   	<property name="service" ref="Y_AreaManagerService">
+	</property>
+	<property name="service2" ref="Y_MarketManagerService">
+	</property>
+   </bean>
+   <bean name="/SHGL/y_FindMarketByAreaID" class="com.yuntong.action.ajaxaction.Y_FindMarketByAreaIDAction">
+   	<property name="service" ref="Y_MarketManagerService"></property>
+   </bean>
+   <bean name="/SHGL/y_FindClientByID" class="com.yuntong.action.ajaxaction.Y_FindClientByIDAction">
+    <property name="service" ref="Y_ClientManagerService"></property>
+    <property name="mservice" ref="Y_MarketManagerService"></property>
+   </bean>
+   <bean name="/SHGL/y_SHDJClientAction" class="com.yuntong.action.Y_SHDJClientActionAction">
+   	<property name="service" ref="Y_GoodsManagerService"></property>
+   </bean>
+   <bean name="/SHGL/y_SHDJGoods" class="com.yuntong.action.Y_SHDJGoodsAction">
+   	<property name="factoryManagerService" ref="Y_FactoryManagerService"></property>
+   	<property name="clientManagerService" ref="Y_ClientManagerService"></property>
+   	<property name="registerManagerService" ref="Y_RegisterManagerService"></property>
+   </bean>
+   <bean name="/SHGL/y_FindRegisterByID" class="com.yuntong.action.ajaxaction.Y_FindRegisterByIDAction">
+   	<property name="registerManagerService" ref="Y_RegisterManagerService"></property>
+   </bean>
+   <bean name="/SHGL/y_UpdateRegisterType" class="com.yuntong.action.ajaxaction.Y_UpdateRegisterTypeAction">
+   	<property name="service" ref="Y_RegisterManagerService"></property>
+   </bean>
+   <bean name="/SHGL/y_GoWGHP" class="com.yuntong.action.Y_GoWGHPAction">
+   	<property name="register" ref="Y_SplitRegisterInfo"></property>
+   </bean>
+   <bean name="/SHGL/y_SplitWGHP" class="com.yuntong.action.Y_SplitWGHPAction">
+   	<property name="register" ref="Y_SplitRegisterInfo"></property>
+   </bean>
+   <bean name="/SHGL/y_findR1" class="com.yuntong.action.Y_findR1Action">
+   	<property name="register" ref="Y_SplitRegisterInfo"></property>
+   </bean>
+   <bean name="/SHGL/y_FindR2" class="com.yuntong.action.Y_FindR2Action">
+   	<property name="register" ref="Y_SplitRegisterInfo"></property>
+   </bean>
+   <bean name="/SHGL/y_deleteRegisterByID" class="com.yuntong.action.ajaxaction.Y_deleteRegisterByIDAction">
+   	<property name="splitRegister" ref="Y_SplitRegisterInfo"></property>
+   </bean>
+   <bean name="/JBZL/y_GoCZY" class="com.yuntong.action.Y_GoCZYAction">
+   	<property name="managerService" ref="Y_FilialeManagerService"></property>
+   	<property name="userManagerService" ref="Y_UserManagerService"></property>
+   </bean>
+   <bean name="/JBZL/y_UserSplit" class="com.yuntong.action.Y_UserSplitAction">
+   	<property name="userManagerService" ref="Y_UserManagerService"></property>
+   </bean>
+   <bean name="/JBZL/y_FindU1" class="com.yuntong.action.Y_FindU1Action">
+   	<property name="userManagerService" ref="Y_UserManagerService"></property>
+   </bean>
+   <bean name="/JBZL/y_addUserInfo" class="com.yuntong.action.Y_addUserInfoAction">
+   	<property name="userManagerService" ref="Y_UserManagerService"></property>
+   </bean>
+   <bean name="/JBZL/y_GoYHQX" class="com.yuntong.action.Y_GoYHQXAction">
+   	<property name="roleManagerService" ref="Y_RoleManagerService"></property>
+   </bean>
+   <bean name="/JBZL/y_UpdataRole" class="com.yuntong.action.Y_UpdataRoleAction">
+   	<property name="roleManagerService" ref="Y_RoleManagerService"></property>
+   </bean>
+   <bean name="/SHGL/y_GoSHDJ" class="com.yuntong.action.Y_GoSHDJAction">
+   	
+   </bean>
+   <bean name="/SHGL/y_CKXX" class="com.yuntong.action.ajaxaction.Y_CKXXAction">
+   	<property name="registerManagerService" ref="Y_RegisterManagerService"></property>
+   </bean>
+  <bean name="/SHGL/y_disrepareInfo" class="com.yuntong.action.ajaxaction.Y_disrepareInfoAction">
+  	<property name="registerManagerService" ref="Y_RegisterManagerService"></property>
+  </bean>
+   <bean name="/JBZL/y_UpdatePwd" class="com.yuntong.action.Y_UpdatePwdAction">
+		<property name="userManagerService" ref="Y_UserManagerService"></property>
+   </bean>
+   	<!-- =====================================配置action结束========================================= -->
+   
+   <!--============================================ 事物设置 ========================================================-->
+	<!-- 事物管理器 -->	
+	<bean id="tManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory"/>
+		</property>
+	</bean>
+	<!-- 事物拦截-->
+	<bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager" ref="tManager">
+		</property>
+		<property name="transactionAttributes">
+			<props>
+				<prop key="add*">PROPAGATION_REQUIRED,-java.lang.Exception</prop>
+				<prop key="del*">PROPAGATION_REQUIRED,-java.lang.Exception</prop>				
+				<prop key="update*">PROPAGATION_REQUIRED,-java.lang.Exception</prop>
+				<prop key="Find*">PROPAGATION_REQUIRED,-java.lang.Exception</prop>
+		     
+		     	<prop key="Richange">PROPAGATION_REQUIRED,-java.lang.Exception</prop>
+		     	<prop key="ShaoShouKuan">PROPAGATION_REQUIRED,-java.lang.Exception</prop>
+			</props>
+			</property>		
+	</bean>
+	<!-- 自动代理 -->
+	<bean id="autoProxy" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>*Service</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<value>transactionInterceptor</value>
+			</list>
+			</property>		
+	</bean>
+	<!--=========================================== yaoqingyuan(end) ==============================================-->
+	
+	
+	
+	
+	
+	
+	
+	
+	<!--=========================================== mayuan ==============================================-->
+	<!-- =====================================配置service类开始========================================= -->
+	<bean id="M_TAgionInfoManagerService" class="com.yuntong.service.impl.M_TAgionInfoManager">
+	<property name="dao" ref="TAgioInfoDAO"></property>
+	</bean>
+	<bean id="M_IRegisterManagerServiceManager" class="com.yuntong.service.impl.M_IRegisterManagerServiceManager">
+	<property name="infoDAO" ref="TRegisterInfoDAO"></property>
+	</bean>
+	<!-- =====================================配置service类结束========================================= -->
+	
+	<!-- =====================================配置action开始========================================= -->
+	<!-- 进入 -->
+	<bean name="/SCGL/m_googleTHDJ" class="com.yuntong.action.M_googleTHDJAction">
+		<property name="managerService" ref="M_IRegisterManagerServiceManager"></property>
+	</bean>
+	<bean name="/SCGL/m_scgl_1" class="com.yuntong.action.M_scgl_1Action">
+		<property name="m_service">
+			<ref bean="M_TAgionInfoManagerService" />
+		</property>
+	</bean>
+	<!-- 删除 -->
+	<bean name="/SCGL/m_delteInfo" class="com.yuntong.action.M_delteInfoAction">
+		<property name="m_service">
+		<ref bean="M_TAgionInfoManagerService"/>
+		</property>
+	</bean>
+	<!-- 查找 -->
+	<bean name="/SCGL/m_select" class="com.yuntong.action.M_selectAction">
+		<property name="m_service">
+		<ref bean="M_TAgionInfoManagerService"/>
+		</property>
+	</bean>
+	<!-- 更新 -->
+	<bean name="/SCGL/updateInfo" class="com.yuntong.action.UpdateInfoAction">
+		<property name="m_service">
+			<ref bean="M_TAgionInfoManagerService"/>
+		</property>
+	</bean>
+	<!-- 添加 -->
+	<bean name="/SCGL/addInfo" class="com.yuntong.action.AddInfoAction">
+		<property name="m_service">
+			<ref bean="M_TAgionInfoManagerService"/>
+		</property>
+	</bean>
+	<bean name="/SCGL/findById" class="com.yuntong.action.FindByIdAction">
+		<property name="managerService">
+			<ref bean="M_IRegisterManagerServiceManager"/>
+		</property>
+	</bean>
+	<bean name="/SCGL/m_updataAjaxAction" class="com.yuntong.action.ajaxaction.M_updataAjaxActionAction">
+		<property name="managerService">
+			<ref bean="M_IRegisterManagerServiceManager"/>
+		</property>
+	</bean>
+	<bean name="/SCGL/m_typing" class="com.yuntong.action.M_typingAction">
+		<property name="m_service">
+			<ref bean="M_TAgionInfoManagerService"/>
+		</property>
+	</bean>
+	<!-- =====================================配置action结束========================================= -->
+	<!--=========================================== mayuan(end) ==============================================-->
+	<!--=========================================== guoyibin  start==============================================-->
+	<!-- action start -->
+	<bean name="/PSGL/g_GoPSGL" class="com.yuntong.action.G_GoPSGLAction">
+		<property name="filialeService" ref="G_FilialeService"></property>
+		<property name="truckStyleService" ref="G_TruckStyleService"></property>
+	</bean>
+	
+	<bean name="/PSGL/g_AddTruckInfo" class="com.yuntong.action.G_AddTruckInfoAction">
+		<property name="truckInfoService" ref="G_TruckInfoService"></property>
+	</bean>
+	<bean name="/PSGL/g_GoDriverInfo" class="com.yuntong.action.G_GoDriverInfoAction">
+		<property name="filialeService" ref="G_FilialeService"></property>
+	</bean>
+	<bean name="/PSGL/g_AddDriverInfo" class="com.yuntong.action.G_AddDriverInfoAction">
+		<property name="driverInfoService" ref="G_DriverInfoService"></property>
+	</bean>
+	<bean name="/PSGL/g_GoSJYS" class="com.yuntong.action.G_GoSJYSAction">
+		<property name="driverInfoService" ref="G_DriverInfoService"></property>
+		<property name="truckInfoService" ref="G_TruckInfoService"></property>
+		<property name="areaManagerService" ref="Y_AreaManagerService"></property>
+	</bean>
+	<bean name="/PSGL/g_FindCityByProvince" class="com.yuntong.action.ajaxaction.G_FindCityByProvinceAction">
+		<property name="areaInfoService" ref="G_AreaInfoService"></property>
+	</bean>
+	<bean name="/PSGL/g_TruckParticularInfo" class="com.yuntong.action.ajaxaction.G_TruckParticularInfoAction">
+		<property name="truckInfoService" ref="G_TruckInfoService"></property>
+	</bean>
+	<bean name="/PSGL/g_FindRegisterInfo" class="com.yuntong.action.ajaxaction.G_FindRegisterInfoAction">
+		<property name="registerInfoService" ref="G_RegisterInfoService"></property>
+	</bean>
+	<bean name="/PSGL/g_FindTruckInfo" class="com.yuntong.action.G_FindTruckInfoAction">
+		<property name="truckInfoService" ref="G_TruckInfoService"></property>
+	</bean>
+	<bean name="/PSGL/g_FindDriverInfo" class="com.yuntong.action.G_FindDriverInfoAction">
+		<property name="driverInfoService" ref="G_DriverInfoService"></property>
+	</bean>
+	<bean name="/PSGL/g_FindAllTruck" class="com.yuntong.action.G_FindAllTruckAction">
+		<property name="pageSize" value="5"></property>
+		<property name="truckInfoService" ref="G_TruckInfoService"></property>
+	</bean>
+	<bean name="/PSGL/g_GoSNPS" class="com.yuntong.action.G_GoSNPSAction">
+		<property name="driverInfoService" ref="G_DriverInfoService"></property>
+		<property name="marketInfoService" ref="G_MarketInfoService"></property>
+		<property name="truckInfoService" ref="G_TruckInfoService"></property>
+	</bean>
+	<bean name="/PSGL/g_FindAllDriverInfo" class="com.yuntong.action.G_FindAllDriverInfoAction">
+		<property name="driverInfoService" ref="G_DriverInfoService"></property>
+		<property name="pageSize" value="5"></property>
+	</bean>
+	<bean name="/PSGL/g_GoSJYS3" class="com.yuntong.action.G_GoSJYS3Action">
+		<property name="roadwayService" ref="G_RoadwayService"></property>
+		<property name="registerInfoService" ref="G_RegisterInfoService"></property>
+	</bean>
+	<bean name="/PSGL/g_GoSNPS3" class="com.yuntong.action.G_GoSNPS3Action">
+		<property name="roadwayService" ref="G_RoadwayService"></property>
+		<property name="registerInfoService" ref="G_RegisterInfoService"></property>
+	</bean>
+	<bean name="/CXTJ/g_CXTJ" class="com.yuntong.action.ajaxaction.G_CXTJAction">
+		<property name="registerInfoService" ref="G_RegisterInfoService"></property>
+	</bean>
+	<bean name="/PSGL/g_RegisterAutoComplete" class="com.yuntong.action.G_RegisterAutoCompleteAction">
+		<property name="registerInfoService" ref="G_RegisterInfoService"></property>
+	</bean>
+	<bean name="/PSGL/g_googleTruck" class="com.yuntong.action.ajaxaction.G_googleTruckAction">
+		<property name="infoService" ref="G_TruckInfoService"></property>
+	</bean>
+	<!-- action end -->
+	
+	<!-- service start -->
+	<bean id="G_TruckStyleService" class="com.yuntong.service.impl.G_TruckStyleService">
+		<property name="truckStyleDAO" ref="TTruckStyleDAO"></property>
+	</bean>
+	<bean id="G_FilialeService" class="com.yuntong.service.impl.G_FilialeService">
+		<property name="filialeInfoDAO" ref="TFilialeInfoDAO"></property>
+	</bean>
+	
+	<bean id="G_TruckInfoService" class="com.yuntong.service.impl.G_TruckInfoService">
+		<property name="truckInfoDAO" ref="TTruckInfoDAO"></property>
+		<property name="filialeService" ref="G_FilialeService"></property>
+		<property name="truckStyleService" ref="G_TruckStyleService"></property>
+	</bean>
+	
+	<bean id="G_DriverInfoService" class="com.yuntong.service.impl.G_DriverInfoService">
+		<property name="driverInfoDAO" ref="TDriverInfoDAO"></property>
+		<property name="filialeService" ref="G_FilialeService"></property>
+	</bean>
+	<bean id="G_AreaInfoService" class="com.yuntong.service.impl.G_AreaInfoService">
+		<property name="areaInfoDAO" ref="TAreaInfoDAO"></property>
+	</bean>
+	<bean id="G_RegisterInfoService" class="com.yuntong.service.impl.G_RegisterInfoService">
+		<property name="registerInfoDAO" ref="TRegisterInfoDAO"></property>
+		<property name="registerStateDAO" ref="TRegisterStateDAO"></property>
+	</bean>
+	<bean id="G_MarketInfoService" class="com.yuntong.service.impl.G_MarketInfoService">
+		<property name="marketInfoDAO" ref="TMarketInfoDAO"></property>
+	</bean>
+	<bean id="G_RoadwayService" class="com.yuntong.service.impl.G_RoadwayService">
+		<property name="carTypeDAO" ref="TCarTypeDAO"></property>
+		<property name="driverInfoDAO" ref="TDriverInfoDAO"></property>
+		<property name="driverInfoService" ref="G_DriverInfoService"></property>
+		<property name="roadwayDAO" ref="TRoadwayDAO"></property>
+		<property name="truckInfoDAO" ref="TTruckInfoDAO"></property>
+		<property name="truckInfoService" ref="G_TruckInfoService"></property>
+	</bean>
+	<!-- service end -->
+	<!--=========================================== guoyibin  end==============================================-->
+	
+	
+	<!--==============================================xiaoxing================================================-->
+	
+	<bean id="X_financialManage" class="com.yuntong.service.impl.X_financialManage">
+		<property name="infoDAO" ref="TRegisterInfoDAO"></property>
+		<property name="infoDAO2" ref="TDisrepareInfoDAO"></property>
+		<property name="stateDAO" ref="TRegisterStateDAO"></property>
+		<property name="agioInfoDAO" ref="TAgioInfoDAO"></property>
+		<property name="roadwayDAO" ref="TRoadwayDAO"></property>
+		<property name="agioTypeDAO" ref="TAgioTypeDAO"></property>
+	</bean>
+	<!-- ================= -->
+	<bean name="/Financial/x_Financial" class="com.yuntong.action.X_FinancialAction">
+   		<property name="service" ref="X_financialManage"></property>
+   </bean>	
+   
+   <bean name="/Financial/x_Goods" class="com.yuntong.action.X_GoodsAction">
+   	<property name="service" ref="X_financialManage"></property>
+   </bean>
+   
+   <bean name="/Financial/x_per" class="com.yuntong.action.X_perAction">
+   		<property name="service" ref="X_financialManage"></property>
+   </bean>
+   
+   <bean name="/Financial/x_pick" class="com.yuntong.action.X_pickAction">
+   		<property name="service" ref="X_financialManage"></property>
+   </bean>
+   
+   <bean name="/Financial/x_pickinfo" class="com.yuntong.action.X_pickinfoAction">
+   	<property name="service" ref="X_financialManage"></property>
+   </bean>
+   
+   <bean name="/Financial/x_addLose" class="com.yuntong.action.X_addLoseAction">
+   	<property name="service" ref="X_financialManage"></property>
+   </bean>
+   
+   <bean name="/Financial/x_few" class="com.yuntong.action.X_fewAction">
+   	<property name="service" ref="X_financialManage"></property>
+   </bean> 
+   
+   <bean name="/Financial/x_lose" class="com.yuntong.action.X_loseAction"/>
+   
+   <bean name="/Financial/x_Ribose" class="com.yuntong.action.X_RiboseAction">
+   	<property name="service" ref="X_financialManage"></property>
+   </bean>
+   
+<!--==============================================xiaoxing================================================-->
+
+
+<!-- =================================================wang============================================ -->
+   <bean name="/PWGL/j_FareMathAjaxAction" class="com.yuntong.action.ajaxaction.J_FareMathAjaxActionAction">
+   <property name="fareMathService" ref="Y_FareMathService"></property>
+   </bean>
+   <bean name="/PWGL/jfrareMathAction" class="com.yuntong.action.JfrareMathActionAction">
+   <property name="fareMathServices" ref="Y_FareMathService"></property>
+   </bean>
+   <bean name="/PWGL/j_RiChanged" class="com.yuntong.action.J_RiChangedAction">
+   <property name="fareMathServices" ref="Y_FareMathService"></property>
+   </bean>
+   <bean name="/PWGL/j_ShaoShouKuanAjax" class="com.yuntong.action.ajaxaction.J_ShaoShouKuanAjaxAction">
+   <property name="kuanService" ref="J_ShaoShouKuanService"></property>
+   </bean>
+   <bean name="/PWGL/j_ShaoShouKuan" class="com.yuntong.action.J_ShaoShouKuanAction">
+   <property name="kuanService" ref="J_ShaoShouKuanService"></property>
+   </bean>
+   <bean name="/PWGL/checkRigAjaxAction" class="com.yuntong.action.ajaxaction.CheckRigAjaxActionAction">
+   <property name="fareMathService" ref="Y_FareMathService"></property>
+   </bean>
+   <bean name="/PWGL/j_GetStateAction" class="com.yuntong.action.J_GetStateActionAction">
+   <property name="fareMathService" ref="Y_FareMathService"></property>
+   </bean>
+   <bean name="/PWGL/j_CheckRigAction" class="com.yuntong.action.J_CheckRigActionAction">
+   <property name="fareMathServices" ref="Y_FareMathService"></property>
+   </bean>
+   <bean name="/PWGL/j_RigHotLineAction" class="com.yuntong.action.J_RigHotLineActionAction">
+   <property name="factoryInfoViewService" ref="J_FactoryInfoViewService"></property>
+   </bean>
+   <bean name="/PWGL/j_googleFYGS" class="com.yuntong.action.ajaxaction.J_googleFYGSAction">
+   	<property name="fareMathService" ref="Y_FareMathService"></property>
+   </bean>
+   <!-- =============================service====================================== -->
+   <bean id="Y_FareMathService" class="com.yuntong.service.impl.J_FareMathServiceImpl">
+	<property name="registerInfoDAO" ref="TRegisterInfoDAO"></property>
+	<property name="areaFreightInfoDAO" ref="TAreaFreightInfoDAO"></property>
+	<property name="goodsInfoDAO" ref="TGoodsInfoDAO"></property>
+	<property name="registerStateDAO" ref="TRegisterStateDAO"></property>
+     </bean>
+     <bean id="J_ShaoShouKuanService"  class="com.yuntong.service.impl.J_ShaoShouKuanServiceImpl">
+     <property name="agioInfoDAO" ref="TAgioInfoDAO"></property>
+     </bean>
+     <bean id="J_FactoryInfoViewService" class="com.yuntong.service.impl.J_FactoryInfoViewServiceImpl">
+     <property name="factoryInfoDAO" ref="TFactoryInfoDAO"></property>
+     <property name="registerInfoDAO" ref="TRegisterInfoDAO" ></property>
+     </bean>
+	</beans>

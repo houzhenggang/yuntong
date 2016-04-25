@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+<struts-config>
+ <data-sources />
+  <form-beans >
+   <form-bean name="j_ShaoShouKuanForm" type="com.yuntong.action.actionform.J_ShaoShouKuanForm" />
+  </form-beans>
+   <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+   <action path="/j_FareMathAjaxAction" type="org.springframework.web.struts.DelegatingActionProxy" />
+    <action path="/jfrareMathAction" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward
+        name="fare"
+        path="/PWGL/J_FareMath.jsp"
+        redirect="true"
+        contextRelative="true" />
+    </action>
+    <action path="/j_RiChanged" type="org.springframework.web.struts.DelegatingActionProxy" />
+    <action
+      attribute="J_ShaoShouKuanForm"
+      name="j_ShaoShouKuanForm"
+      path="/j_ShaoShouKuan"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+       <forward
+        name="index"
+        path="/PWGL/J_ShaoShouKuan.jsp"
+        redirect="true"
+        contextRelative="true" />
+    </action>
+    <action path="/j_ShaoShouKuanAjax" type="org.springframework.web.struts.DelegatingActionProxy"/>
+    <action path="/checkRigAjaxAction" type="org.springframework.web.struts.DelegatingActionProxy"/>
+    <action path="/j_GetStateAction" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="action" path="/J_CheckRig.jsp" />
+      
+    </action>
+    <action path="/j_CheckRigAction" type="org.springframework.web.struts.DelegatingActionProxy">
+      
+      <forward
+        name="indexs"
+        path="/PWGL/j_GetStateAction.do"
+        redirect="true"
+        contextRelative="true" />
+    </action>
+    <action path="/j_RigHotLineAction" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward
+        name="view"
+        path="/PWGL/FactoryInfo.jsp"
+        redirect="true"
+        contextRelative="true" />
+    </action>
+    <action path="/j_googleFYGS" type="org.springframework.web.struts.DelegatingActionProxy" />
+    </action-mappings>
+    <controller processorClass="com.yuntong.requestProcessor.MyRequestProcessor"></controller>
+  <message-resources parameter="com.yuntong.ApplicationResources" />
+  <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+  	<set-property property="contextConfigLocation" value="/WEB-INF/classes/spring.xml"/>
+  </plug-in>
+</struts-config>
+

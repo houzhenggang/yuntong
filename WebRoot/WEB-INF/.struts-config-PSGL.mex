@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/g_GoPSGL.do" location="0,0" dimension="308,88" />
+  <StrutsActivity path="/g_AddTruckInfo.do" location="540,564" dimension="308,88" />
+  <StrutsActivity path="/g_GoDriverInfo.do" location="353,0" dimension="308,88" />
+  <StrutsActivity path="/g_AddDriverInfo.do" location="893,564" dimension="308,88" />
+  <StrutsActivity path="/g_GoSJYS.do" location="706,0" dimension="308,88" />
+  <StrutsActivity path="/g_FindCityByProvince.do" location="0,846" dimension="308,88" />
+  <StrutsActivity path="/g_TruckParticularInfo.do" location="353,846" dimension="308,88" />
+  <StrutsActivity path="/g_GoSJYS2.do" location="271,564" dimension="224,88" />
+  <StrutsActivity path="/g_FindRegisterInfo.do" location="706,846" dimension="308,88" />
+  <StrutsActivity path="/g_FindTruckInfo.do" location="0,979" dimension="308,88" />
+  <StrutsActivity path="/g_FindDriverInfo.do" location="353,979" dimension="308,88" />
+  <StrutsActivity path="/g_FindAllTruck.do" location="706,979" dimension="308,88" />
+  <StrutsActivity path="/g_GoSNPS.do" location="0,282" dimension="308,88" />
+  <StrutsActivity path="/g_GoSNPS2.do" location="0,564" dimension="226,88" />
+  <StrutsActivity path="/g_FindAllDriverInfo.do" location="0,1112" dimension="308,88" />
+  <StrutsActivity path="/g_GoSJYS3.do" location="353,282" dimension="308,88" />
+  <StrutsActivity path="/g_GoSNPS3.do" location="706,282" dimension="308,88" />
+  <StrutsActivity path="/g_UpLoadPicture.do" location="353,1112" dimension="305,88" />
+  <StrutsActivity path="/g_RegisterAutoComplete.do" location="1250,750" dimension="308,88" />
+  <StrutsActivity path="/G_addCar.jsp" location="104,188" dimension="99,49" />
+  <StrutsActivity path="/G_addDriver.jsp" location="451,188" dimension="111,49" />
+  <StrutsActivity path="/G_sjys1.jsp" location="815,188" dimension="89,49" />
+  <StrutsActivity path="/G_sjys2.jsp" location="338,752" dimension="89,49" />
+  <StrutsActivity path="/G_scps1.jsp" location="108,470" dimension="91,49" />
+  <StrutsActivity path="/G_scps2.jsp" location="67,752" dimension="91,49" />
+  <StrutsActivity path="/G_sjys3.jsp" location="462,470" dimension="89,49" />
+  <StrutsActivity path="/G_scps3.jsp" location="814,470" dimension="91,49" />
+  <StrutsActivity path="/g_googleTruck.do" location="15,120" dimension="150,100" />
+  <StrutsTransition id="/g_GoSNPS.do,scps,/G_scps1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="154,370" />
+      <AbsolutePoint location="154,470" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/g_GoPSGL.do,psgl,/G_addCar.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="182,88" />
+      <AbsolutePoint location="182,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/g_GoSJYS.do,sjys,/G_sjys1.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="860,88" />
+      <AbsolutePoint location="860,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/g_GoDriverInfo.do,addDriver,/G_addDriver.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="507,88" />
+      <AbsolutePoint location="507,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/g_GoSNPS3.do,scps3,/G_scps3.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="860,370" />
+      <AbsolutePoint location="860,470" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/g_GoSJYS3.do,sjys3,/G_sjys3.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="507,370" />
+      <AbsolutePoint location="507,470" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/g_GoSNPS2.do,scps2,/G_scps2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="113,652" />
+      <AbsolutePoint location="113,752" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/g_GoSJYS2.do,sjys2,/G_sjys2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="383,652" />
+      <AbsolutePoint location="383,752" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

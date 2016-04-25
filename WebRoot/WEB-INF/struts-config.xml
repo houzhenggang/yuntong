@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="y_LoginForm" type="com.yuntong.action.actionform.Y_LoginForm" />    
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action path="/y_CheckNum" type="com.yuntong.action.ajaxaction.Y_CheckNumAction" />
+    <action
+      attribute="y_LoginForm"
+      input="/Y_Login.jsp"
+      name="y_LoginForm"
+      path="/y_Login"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="ok" path="/Y_Index.jsp" />
+      <forward name="error" path="/Y_Login.jsp" />
+    </action>
+     <action forward="/Y_Login.jsp" path="/y_GoLoginPage" />
+    <action forward="/Y_Index.jsp" path="/y_GoIndex" />
+    <action path="/y_Logout" type="com.yuntong.action.Y_LogoutAction" >
+      <forward name="login" path="/Y_Login.jsp" />
+    </action>
+    <action path="/y_getInfo" type="org.springframework.web.struts.DelegatingActionProxy" />
+
+  </action-mappings>
+  <controller processorClass="com.yuntong.requestProcessor.MyRequestProcessor"></controller>
+  <message-resources parameter="com.yuntong.ApplicationResources" />
+  <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+  	<set-property property="contextConfigLocation" value="/WEB-INF/classes/spring.xml"/>
+  </plug-in>
+</struts-config>
+
